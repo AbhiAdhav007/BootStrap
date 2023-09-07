@@ -1,0 +1,20 @@
+.product-list{
+    margin: 30px; 
+}
+
+.action-buttons{
+
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+.action-buttons button{
+
+    width: 70px;
+    height: 30px;
+}
+
+#newProductBtn{
+    border: none;
+    background: none;
+}

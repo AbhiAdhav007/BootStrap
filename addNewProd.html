@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product</title>
+    
+</head>
+<style>
+
+.insertProducts{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+</style>
+<body>
+    <div>
+        <h3>Add Products:</h3>
+        <form class="insertProducts"> 
+            <label for="name">Product Name: </label>
+            <input type="text" id="name"><br>
+            <label for="price">Price: </label>
+            <input type="number" id="price"><br>
+            <label for="color">Color: </label>
+            <input type="text" id="color"><br>
+            <label for="year">Model_Year: </label>
+            <input type="text" id="year"><br>
+            <button type="submit" id="submitEvent" style="width: 70px;">Insert</button>
+        </form>
+    </div>
+
+    <script src="./addScript.js"></script>
+    
+    
+</body>
+</html>
