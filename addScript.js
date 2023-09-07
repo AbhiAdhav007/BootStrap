@@ -11,6 +11,7 @@ const model_Year = document.getElementById('year')
 // Adding new Product
 submitBtn.addEventListener('click', (event) => {
 
+    localStorage.removeItem('product');
     event.preventDefault()
     
     let name = productName.value;
@@ -41,6 +42,5 @@ submitBtn.addEventListener('click', (event) => {
     console.log(product);
     localStorage.setItem('product' , JSON.stringify(product));
     close();
-
 
 })

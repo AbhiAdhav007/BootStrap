@@ -129,6 +129,8 @@ confirmBtn.addEventListener('click' , ()=>{
     addProduct()
 })
 
+//Edit Product
+
 function editProduct(event){
 
     viewProdContainer.innerText = ""
@@ -136,6 +138,15 @@ function editProduct(event){
 
     let field = prompt("Please enter field name that you want to change ?");
 
+    console.log(field)
+    if(field === null){
+        let div = document.createElement('div');
+        div.innerHTML = `<div class="alert alert-danger" role="alert">
+        Please Enter The field...!
+      </div>`
+        viewProdContainer.append(div);
+        return;
+    }
     let value = prompt("Enter new value..!")
 
     products.forEach((product)=>{
@@ -152,6 +163,8 @@ function editProduct(event){
 
 }
 
+
+//Register Product
 addNewProdBtn.addEventListener('click' , (event)=>{
 
     viewProdContainer.innerText = ""
@@ -159,6 +172,20 @@ addNewProdBtn.addEventListener('click' , (event)=>{
     a.href = './addNewProd.html'
     a.target = '_blank'
     a.click();
+    
+
+    let button = document.createElement('button');
+    button.innerText = 'Add product';
+    button.setAttribute('id' , 'addProd');
+    button.setAttribute('onclick' , 'addProd()')
+    button.setAttribute('class' , 'btn btn-primary')
+    viewProdContainer.append(button);
+    
+})
+
+
+let addProd = ()=>{
+
     let product = JSON.parse(localStorage.getItem('product'));
 
     if(product){
@@ -174,45 +201,5 @@ addNewProdBtn.addEventListener('click' , (event)=>{
       </div>`
     //   container.appendChild(div)
     }
-    
-})
+}
 
-
-
-// //for adding the product
-// const submitBtn = document.getElementById('submitBtn');
-// let Prodcolor = document.getElementById('color')
-// const productName = document.getElementById('name');
-// const productPrice = document.getElementById('price');
-// const model_Year = document.getElementById('year')
-
-
-// //Adding new Product
-// submitBtn.addEventListener('click', (event) => {
-
-//     event.preventDefault();
-
-//     console.log('testfdsufbdsuidsifdsifnsdifdsiubdsuiizdhfdgvndfuigndfghsu')
-    
-//     let name = productName.value;
-//     let price = parseInt(productPrice.value);
-//     let color = Prodcolor.value;
-//     let model_year = model_Year.value;
-
-//     if (productName.value) {
-//         productName.value = "";
-//     }
-//     if (productPrice.value) {
-//         productPrice.value = "";
-//     }
-
-//     let product = {
-//         name,
-//         price,
-//         color,
-//         model_year
-//     }
-//     products.push(product);
-//     console.log(products);
-
-// })
